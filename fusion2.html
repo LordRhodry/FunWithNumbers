@@ -1,0 +1,54 @@
+
+
+<html>
+
+<head>
+	<title>Math Game Fusion type 2</title>
+
+	
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+ 
+<script src="http://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
+
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css" /> 
+
+
+	<script type='text/javascript' src='js/Numbergame2.js'></script>
+
+
+</head>
+<body bgcolor="black" link="#ffff00" vlink="yellow" marginwidth=5 marginheight=1 topmargin=1 leftmargin=5 style="color:white;">  
+
+
+
+
+		<div id="block">
+		<h1>Number fusion2</h1>
+		<p id="rules">Temp text</p>
+		Your score : <input type="number" value=0 id="myscore"><br><br>
+		Best score : <input type="number" value=0 id="bestscore">
+		</div>
+
+		<div id= "gamearea">
+		<canvas id="gameCanvas" height="750px" width="750px" style="border:1px solid #000000;"></canvas> 
+		</div>
+
+		<div id="block">
+<br>
+		<p> In this game, each turn you chose a valid gravity orientation by pressing the corresponding arrow key. (Valid means it makes tiles move). <br><br>
+		If the movement makes two tiles that match the rule collide into each other they fuse using the rule of the day.<br><br>
+		After Each movement a tile is randomly added to the board. <br>
+		You lose if there are no valid movement left.<br><br>
+		You score points for each fusion you create (the harder the tile you createis to obtain, the more points it gives you).<br>
+		Good luck!</p>
+		</div>
+
+ </body>
+   <div id="dialog" title="Game Over">
+	Try Again?
+ </div>
+ <div id="dialog2" title="Victory!">
+	You won this game!<br>
+	You can contune playing to get a high score or you can start a new game.
+ </div>
+</html>

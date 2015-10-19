@@ -1,0 +1,71 @@
+
+
+<html>
+
+<head>
+	<title>Number Memory</title>
+
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+ 
+<script src="http://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
+
+
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css" />
+	<link href="css/toastr.css" rel="stylesheet"/>
+	<script src="js/toastr.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/Numbermemory.css" />
+	
+
+	<script src="js/Numbermemory.js"></script>
+	
+</head>
+<body bgcolor="black" link="#ffff00" vlink="yellow" marginwidth=5 marginheight=1 topmargin=1 leftmargin=5> 
+
+
+
+
+<h1>Number Memory</h1>
+		<div id="block" style="width:100%; color:white;">
+		
+		<h2 id="turn" style="color:Red;">The game has not started yet, click on a card to start the game. </h2>
+		<p id="rules">The current equation is: ? + ? = ?</p>
+		<p id = "Scores"> Current scores :<br> Player1 : 0 <br> Player2 : 0</p> 
+		</div>
+		<div id="block" style="position:relative; width:524px; height:408px; align:center; display:block; margin:auto;">
+		<div id="cards" ></div>
+		<script type="text/javascript">
+		var divtext = "";
+		var posx= 0;
+		var posy = 0;
+		for (var j=0 ;j<4 ; j++)
+		{
+			posy = 2+ 104 * j;
+			for (var i=0 ; i<5 ; i++)
+			{
+				posx = 2+ 104*i;
+				
+				divtext += '<div class="flip-container" id="cardx'+i+'y'+j+'" style="position:absolute;left:+'+posx+'px; top:+'+posy+'px;width:102px;height:102px;" onclick="clickOnCard(this.getAttribute(\'id\'))">	<div class="flipper"> <div class="front"> <img src="mathlogo.jpg"> </div> <div class="back"> </div> </div> </div>';
+			}
+		}
+		document.getElementById("cards").innerHTML= divtext;
+
+		</script>
+		</div>
+		<div id="block2" style="color:white; position:relative; display:block;">
+		<h3>Equation completed by player 1</h3>
+		<div id="player1" style="position:float;"></div>
+		<h3>Equation completed by player 2</h3>
+		<div id="player2" style="position:float;">
+		<p style="text-align:left;"> The goal is to find 2 number card that would allow to complete the equation.<br><br> Each time you balance an equation you score 1 point, a new equation to complete is chosen, and you go again.<br><br> The winner is the player with the most point when all cards are gone.<br><br>
+		Each player plays one turn and then the next player plays.<br>
+		
+		If the cards do not fulfil an equation they are returned face down and the next player's turn begins.</p></div>
+		</div>	
+
+
+
+</body>
+<div id="dialog" title="Game Over">
+
+</div>
+</html>
